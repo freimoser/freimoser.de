@@ -3,7 +3,7 @@
 ## Über das Projekt
 Persönliche Branding-Website für S. Thomas Freimoser — VP Data Analytics & Automation, Bootstrapped Entrepreneur.
 Die Domain freimoser.de soll später die Haupt-URL werden, aktuell läuft die Site auf GitHub Pages:
-`https://Freemoser.github.io/freimoser.de/`
+`https://freimoser.github.io/freimoser.de/`
 
 ## Tech-Stack (NICHT ändern)
 - **Framework:** Astro 7.1.6 (statisch, kein SSR)
@@ -34,7 +34,7 @@ Die Domain freimoser.de soll später die Haupt-URL werden, aktuell läuft die Si
 
 ## Config (astro.config.mjs)
 ```js
-site: 'https://Freemoser.github.io',
+site: 'https://freimoser.github.io',
 base: '/freimoser.de',
 build: { format: 'directory' }
 ```
