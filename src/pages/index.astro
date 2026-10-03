@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { featuredProjects, allProjects } from '../data/projects';
 
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -28,8 +30,8 @@ const base = import.meta.env.BASE_URL.endsWith('/')
           <span>LLM-Provider</span>
         </div>
         <div class="hero-stat">
-          <strong>11</strong>
-          <span>AI-Projekte</span>
+          <strong>{allProjects.length}</strong>
+          <span>Live-Projekte</span>
         </div>
         <div class="hero-stat">
           <strong>VP</strong>
@@ -44,108 +46,11 @@ const base = import.meta.env.BASE_URL.endsWith('/')
       <div class="section-header">
         <p class="label">Projekte</p>
         <h2>Was ich mache</h2>
-        <p>Eine Auswahl meiner AI-Projekte — von autonomen Agenten bis zu Multi-Modell-Plattformen.</p>
+        <p>Eine Auswahl meiner eigenen Websites und Apps, die ich gebaut habe und selbst betreibe.</p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card">
-          <span class="icon">🤖</span>
-          <h3>Hermes Agent</h3>
-          <p>Autonomer KI-Assistent mit Tool-Integration — codiert, recherchiert, administriert Systeme und orchestriert Workflows über 10+ LLM-Provider.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">LLM Agents</span>
-            <span class="tech-tag">OpenRouter</span>
-            <span class="tech-tag">Multi-Provider</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="icon">⚡</span>
-          <h3>OpenCode</h3>
-          <p>Terminal-basierter KI-Coding-Assistent für Prompt-to-Web-App mit Multi-Provider-Support und integrierter Tool-Nutzung.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">CLI</span>
-            <span class="tech-tag">OpenRouter</span>
-            <span class="tech-tag">Code Gen</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="icon">🧠</span>
-          <h3>JetGPT</h3>
-          <p>Custom GPT-Workflows und Multi-Modell-Orchestrierung für automatisierte Content-Pipelines und intelligente Datenverarbeitung.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">GPT</span>
-            <span class="tech-tag">Automation</span>
-            <span class="tech-tag">API</span>
-            <span class="tech-tag">Workflows</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="icon">🌐</span>
-          <h3>Multi-Model Platform</h3>
-          <p>Integration und Benchmarking von 10+ LLMs — Claude, GPT-5, Grok, Gemini, Kimi & mehr. Einheitliche API-Schicht für flexible Modellwahl.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">OpenAI</span>
-            <span class="tech-tag">Anthropic</span>
-            <span class="tech-tag">xAI</span>
-            <span class="tech-tag">Google</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="icon">🔧</span>
-          <h3>Devin</h3>
-          <p>Autonomer KI-Softwareentwickler für eigenständige Code-Generierung, Debugging und Deployment-Prozesse.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">AI Dev</span>
-            <span class="tech-tag">Autonomous</span>
-            <span class="tech-tag">Coding</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="icon">📊</span>
-          <h3>Data & Automation</h3>
-          <p>Skalierbare Daten-Pipelines, ETL-Workflows und Automatisierungslösungen für Unternehmen — von der Analyse bis zur Produktion.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">ETL</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">Automation</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://zecken-finden.org/" class="card-link" target="_blank" rel="noopener noreferrer">
-            <span class="icon">🦟</span>
-            <h3>Zecken finden</h3>
-            <p>zecken-finden.org — Informationsportal rund um Zecken, Zeckenschutz und richtiges Entfernen. Hilft bei Identifikation und Schutz.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Website</span>
-              <span class="tech-tag">Health</span>
-              <span class="tech-tag">Info Portal</span>
-              <span class="tech-tag">German</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://familytree-free.com/de/" class="card-link" target="_blank" rel="noopener noreferrer">
-            <span class="icon">🌳</span>
-            <h3>FamilyTree Free</h3>
-            <p>familytree-free.com/de — Kostenloser Stammbaum-Ersteller. Erstelle und verwalte deinen Familienstammbaum online, einfach und ohne Registrierung.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Website</span>
-              <span class="tech-tag">Genealogy</span>
-              <span class="tech-tag">Family Tree</span>
-              <span class="tech-tag">German</span>
-            </div>
-          </a>
-        </article>
+      <div class="pf-grid">
+        {featuredProjects.map((p) => <ProjectCard project={p} />)}
       </div>
 
       <div class="section-footer">

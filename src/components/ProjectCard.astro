@@ -1,0 +1,25 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project }
+const { project: p } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<article class="pf-card">
+  <a href={p.url} target="_blank" rel="noopener" class="pf-link">
+    <div class="pf-shot">
+      {p.image ? (
+        <img src={`${base}projekte/${p.image}`} alt={`Startseite von ${p.name}`} loading="lazy" width="800" height="500" />
+      ) : (
+        <span class="pf-placeholder">{p.name}</span>
+      )}
+    </div>
+    <div class="pf-body">
+      <h3>{p.name} <span aria-hidden="true">↗</span></h3>
+      <p class="pf-domain">{p.domain}</p>
+      <p>{p.description}</p>
+      <div class="tech-tags">
+        {p.tags.map((t) => <span class="tech-tag">{t}</span>)}
+      </div>
+    </div>
+  </a>
+</article>

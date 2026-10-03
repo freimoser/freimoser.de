@@ -2,8 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 
 const stack = [
-  'Python', 'TypeScript', 'LLM Agents', 'OpenRouter', 'OpenAI',
-  'Anthropic', 'xAI', 'Astro', 'SQL', 'API Design',
+  'Python', 'TypeScript', 'Astro', 'React', 'Next.js', 'SQL', 'API Design',
+];
+const aiTools = [
+  'Claude / Anthropic', 'OpenAI GPT-5', 'Grok / xAI', 'Gemini', 'Kimi / Moonshot',
+  'Devin', 'OpenCode', 'OpenRouter', 'LLM Agents',
 ];
 ---
 
@@ -49,6 +52,14 @@ const stack = [
         <h2>Mein Tech-Stack</h2>
         <div class="tech-cloud">
           {stack.map((t) => (
+            <span class="tech-tag">{t}</span>
+          ))}
+        </div>
+
+        <h2>Womit ich arbeite</h2>
+        <p>Für meine Projekte kombiniere ich verschiedene KI-Modelle und Agenten, je nachdem, was die Aufgabe braucht.</p>
+        <div class="tech-cloud">
+          {aiTools.map((t) => (
             <span class="tech-tag">{t}</span>
           ))}
         </div>
