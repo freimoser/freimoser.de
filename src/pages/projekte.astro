@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { groups, allProjects } from '../data/projects';
+---
+
+<Layout title="Projekte — Freimoser" description={`Portfolio von S. Thomas Freimoser: ${allProjects.length} eigene Websites, Apps und Tools, von Tiermedizin in Zahlen über BierDurst bis Meta Awards.`}>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="pretitle">Portfolio</p>
+      <h1>Meine <span class="text-gradient">Projekte</span></h1>
+      <p>Websites, Apps und Tools, die ich neben meinem Job selbst gebaut habe und betreibe. Alle live, alle mit eigenem Thema.</p>
+      <nav class="pf-nav" aria-label="Bereiche">
+        {groups.map((g) => <a href={`#${g.id}`}>{g.title}</a>)}
+      </nav>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      {groups.map((g) => (
+        <div class="pf-group" id={g.id}>
+          <div class="pf-group-head">
+            <h2>{g.title}</h2>
+            <p>{g.intro}</p>
+          </div>
+          <div class="pf-grid">
+            {g.projects.map((p) => <ProjectCard project={p} />)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+</Layout>

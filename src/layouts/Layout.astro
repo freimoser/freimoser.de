@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Freimoser — AI Engineering & Automation',
+  description = 'S. Thomas Freimoser — KI-gestützte Automatisierung, Data Engineering und intelligente Agenten-Systeme.',
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const currentPath = Astro.url.pathname;
+
+const homeHref = base;
+const projekteHref = `${base}projekte/`;
+const ueberHref = `${base}ueber-mich/`;
+const kontaktHref = `${base}kontakt/`;
+const impressumHref = `${base}impressum/`;
+const datenschutzHref = `${base}datenschutz/`;
+const faviconHref = `${base}favicon.svg`;
+
+const isHome =
+  !currentPath.includes('projekte') &&
+  !currentPath.includes('ueber-mich') &&
+  !currentPath.includes('kontakt') &&
+  !currentPath.includes('impressum') &&
+  !currentPath.includes('datenschutz');
+---
+
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href={faviconHref} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href={homeHref} class="nav-logo">Frei<span>moser</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten" aria-expanded="false">
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href={homeHref} aria-current={isHome ? 'page' : undefined}>Home</a>
+        </li>
+        <li>
+          <a href={projekteHref} aria-current={currentPath.includes('projekte') ? 'page' : undefined}>Projekte</a>
+        </li>
+        <li>
+          <a href={ueberHref} aria-current={currentPath.includes('ueber-mich') ? 'page' : undefined}>Über mich</a>
+        </li>
+        <li>
+          <a href={kontaktHref} aria-current={currentPath.includes('kontakt') ? 'page' : undefined}>Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="name">Frei<span>moser</span></span>
+        <span class="footer-copy">&copy; {new Date().getFullYear()} · AI Engineering & Automation</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/freimoser" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/freimoser" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href={impressumHref}>Impressum</a></li>
+        <li><a href={datenschutzHref}>Datenschutz</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle?.addEventListener('click', () => {
+      const open = links?.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links?.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>

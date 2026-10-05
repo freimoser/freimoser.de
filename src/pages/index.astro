@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { featuredProjects, allProjects } from '../data/projects';
+
+const base = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout title="Freimoser — AI Engineering & Automation" description="S. Thomas Freimoser. KI-gestützte Automatisierung, intelligente Agenten und Data Engineering. Projekte, die Unternehmen Zeit und Geld sparen.">
+
+  <section class="hero">
+    <div class="container">
+      <p class="pretitle">S. Thomas Freimoser</p>
+      <h1>AI Engineering &<br /><span class="text-gradient">Automation</span></h1>
+      <p class="hero-lead">
+        Ich baue intelligente Systeme, die Unternehmen Zeit und Geld sparen —
+        von autonomen KI-Agenten bis zu skalierbaren Daten-Pipelines.
+        VP Data Analytics & Automation · Bootstrapped Entrepreneur.
+      </p>
+      <div class="btn-group">
+        <a href={`${base}projekte/`} class="btn btn-primary">Projekte entdecken →</a>
+        <a href={`${base}kontakt/`} class="btn btn-secondary">Kontakt</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>10+</strong>
+          <span>LLM-Provider</span>
+        </div>
+        <div class="hero-stat">
+          <strong>{allProjects.length}</strong>
+          <span>Live-Projekte</span>
+        </div>
+        <div class="hero-stat">
+          <strong>VP</strong>
+          <span>Data & Automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Projekte</p>
+        <h2>Was ich mache</h2>
+        <p>Eine Auswahl meiner eigenen Websites und Apps, die ich gebaut habe und selbst betreibe.</p>
+      </div>
+
+      <div class="pf-grid">
+        {featuredProjects.map((p) => <ProjectCard project={p} />)}
+      </div>
+
+      <div class="section-footer">
+        <a href={`${base}projekte/`} class="btn btn-secondary">Alle Projekte ansehen →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Über mich</p>
+        <h2>Wer ich bin</h2>
+      </div>
+
+      <div class="about-card">
+        <div class="avatar">ST</div>
+        <div class="text">
+          <h3>S. Thomas Freimoser</h3>
+          <p class="role">VP Data Analytics & Automation @ Petleo</p>
+          <p>
+            Aus München, remote. Ich verbinde KI mit echter Produktivität —
+            von autonomen Agenten bis zu skalierbaren Daten-Workflows.
+            Bootstrapped Entrepreneur mit Fokus auf AI-Lösungen, die im echten Business Mehrwert liefern.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-footer" style="text-align: left; margin-top: var(--space-lg);">
+        <a href={`${base}ueber-mich/`} class="btn btn-secondary">Mehr über mich →</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

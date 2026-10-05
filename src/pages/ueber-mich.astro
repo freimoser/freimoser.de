@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stack = [
+  'Python', 'TypeScript', 'Astro', 'React', 'Next.js', 'SQL', 'API Design',
+];
+const aiTools = [
+  'Claude / Anthropic', 'OpenAI GPT-5', 'Grok / xAI', 'Gemini', 'Kimi / Moonshot',
+  'Devin', 'OpenCode', 'OpenRouter', 'LLM Agents',
+];
+---
+
+<Layout title="Über mich — Freimoser" description="S. Thomas Freimoser — VP Data Analytics & Automation, Bootstrapped Entrepreneur. Aus München, Remote-First.">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="pretitle">Über mich</p>
+      <h1>Wer ich bin &<br /><span class="text-gradient">was ich tue</span></h1>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="about-card" style="margin-bottom: var(--space-2xl);">
+        <div class="avatar" style="width: 100px; height: 100px; font-size: 2rem;">ST</div>
+        <div class="text">
+          <h3 style="font-size: 1.5rem;">S. Thomas Freimoser</h3>
+          <p class="role" style="font-size: 0.95rem;">VP Data Analytics & Automation @ Petleo</p>
+          <p>
+            Bootstrapped Entrepreneur und AI-Enthusiast. Ich komme aus München und arbeite
+            remote an der Schnittstelle von künstlicher Intelligenz und echter Produktivität.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-prose">
+        <h2>Mein Background</h2>
+        <p>
+          Als VP Data Analytics & Automation bei Petleo verantworte ich die Datenstrategie und
+          Automatisierungs-Pipelines des Unternehmens. Parallel dazu betreibe ich eigene AI-Projekte
+          — von autonomen Agenten bis zu Multi-Modell-Plattformen.
+        </p>
+
+        <h2>Was mich antreibt</h2>
+        <p>
+          KI ist kein Hype — sie ist das produktivste Werkzeug seit dem Internet. Ich bin überzeugt,
+          dass die Kombination aus verschiedenen Modellen (Claude, GPT, Grok, Gemini, Kimi)
+          und cleverer Automatisierung Unternehmen massiv Zeit und Geld spart. Meine Projekte sind
+          praktisch, ergebnisorientiert und liefern echten Mehrwert.
+        </p>
+
+        <h2>Mein Tech-Stack</h2>
+        <div class="tech-cloud">
+          {stack.map((t) => (
+            <span class="tech-tag">{t}</span>
+          ))}
+        </div>
+
+        <h2>Womit ich arbeite</h2>
+        <p>Für meine Projekte kombiniere ich verschiedene KI-Modelle und Agenten, je nachdem, was die Aufgabe braucht.</p>
+        <div class="tech-cloud">
+          {aiTools.map((t) => (
+            <span class="tech-tag">{t}</span>
+          ))}
+        </div>
+
+        <h2>Standort</h2>
+        <div class="location-box">
+          <span class="loc-icon">🌏</span>
+          <p>
+            Aus München · Remote-First<br />
+            Arbeite mit Teams und Kunden weltweit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
