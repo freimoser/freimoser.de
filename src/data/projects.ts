@@ -77,6 +77,13 @@ export const groups: ProjectGroup[] = [
         description: 'Balkonkraftwerk kaufen, anmelden und Strom sparen: unabhängige Kaufberatung und Schritt-für-Schritt-Anleitungen für Mieter und Eigentümer.',
         tags: ['Energie', 'Ratgeber'],
       },
+      {
+        name: 'Balkon bepflanzen',
+        url: 'https://freimoser.github.io/balkon-bepflanzen.de/',
+        domain: 'freimoser.github.io/balkon-bepflanzen.de',
+        description: 'Praxisnaher Ratgeber für Balkongärtner in Deutschland: welche Pflanzen zu Sonne, Schatten und Jahreszeit passen, vom Einsteiger-Tipp bis zum Profi-Trick.',
+        tags: ['Garten', 'Ratgeber'],
+      },
     ],
   },
   {
