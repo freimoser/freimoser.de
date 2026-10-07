@@ -110,6 +110,20 @@ export const groups: ProjectGroup[] = [
         image: 'solvitalk.webp',
       },
       {
+        name: 'ICS Editor',
+        url: 'https://freimoser.github.io/ics-editor/',
+        domain: 'freimoser.github.io/ics-editor',
+        description: 'ICS-Dateien und Google-Kalender-Exporte im Browser öffnen, bearbeiten, aufteilen und für den Import vorbereiten, auch bei Dateien über Googles 1-MB-Grenze. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'Kalender', 'Browser-only'],
+      },
+      {
+        name: 'Journey Journal',
+        url: 'https://freimoser.github.io/journey-journal-web/',
+        domain: 'freimoser.github.io/journey-journal-web',
+        description: 'Privates Tagebuch für die eigene Körper-Transformation: tägliche Foto- und Video-Check-ins, automatisch im eigenen Google Drive gesichert, nie in der Handy-Galerie.',
+        tags: ['App', 'Privacy', 'Google Drive'],
+      },
+      {
         name: 'Easy Photo Editor',
         url: 'https://freimoser.github.io/easy-photo-editor/',
         domain: 'freimoser.github.io/easy-photo-editor',
