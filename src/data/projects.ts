@@ -124,6 +124,13 @@ export const groups: ProjectGroup[] = [
         tags: ['Tool', 'Kalender', 'Browser-only'],
       },
       {
+        name: 'KinoTom',
+        url: 'https://freimoser.github.io/kinotom/',
+        domain: 'freimoser.github.io/kinotom',
+        description: 'Kuratierter Katalog frei zugänglicher Filme: Kurzfilme, Open Movies und KI-Filme zum direkten Anschauen.',
+        tags: ['Katalog', 'Filme', 'Open Movies'],
+      },
+      {
         name: 'Journey Journal',
         url: 'https://freimoser.github.io/journey-journal-web/',
         domain: 'freimoser.github.io/journey-journal-web',
