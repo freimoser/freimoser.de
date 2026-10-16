@@ -124,6 +124,20 @@ export const groups: ProjectGroup[] = [
         tags: ['Tool', 'Kalender', 'Browser-only'],
       },
       {
+        name: 'LDT & BDT Viewer',
+        url: 'https://freimoser.github.io/ldt-bdt-viewer/',
+        domain: 'freimoser.github.io/ldt-bdt-viewer',
+        description: 'LDT- und BDT-Dateien aus Labor und Praxissoftware im Browser öffnen, Laborwerte lesen, Fehler finden und anonymisieren. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'Labordaten', 'Browser-only'],
+      },
+      {
+        name: 'E-Rechnung Klartext',
+        url: 'https://freimoser.github.io/e-rechnung-klartext/',
+        domain: 'freimoser.github.io/e-rechnung-klartext',
+        description: 'XRechnung und ZUGFeRD lesbar anzeigen, prüfen, Fehlercodes verstehen und als PDF speichern. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'E-Rechnung', 'Browser-only'],
+      },
+      {
         name: 'KinoTom',
         url: 'https://freimoser.github.io/kinotom/',
         domain: 'freimoser.github.io/kinotom',
