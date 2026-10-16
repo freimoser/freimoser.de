@@ -138,6 +138,13 @@ export const groups: ProjectGroup[] = [
         tags: ['Tool', 'E-Rechnung', 'Browser-only'],
       },
       {
+        name: 'DICOM Viewer',
+        url: 'https://freimoser.github.io/dicom-viewer/',
+        domain: 'freimoser.github.io/dicom-viewer',
+        description: 'Röntgen-, CT- und MRT-Bilder und ganze Radiologie-CDs im Browser ansehen, anonym als PNG oder JPG exportieren. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'Medizinische Bilder', 'Browser-only'],
+      },
+      {
         name: 'KinoTom',
         url: 'https://freimoser.github.io/kinotom/',
         domain: 'freimoser.github.io/kinotom',
