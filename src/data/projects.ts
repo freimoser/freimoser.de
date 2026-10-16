@@ -37,6 +37,13 @@ export const groups: ProjectGroup[] = [
         description: 'GDT-Dateien (Gerätedatentransfer) im Browser lesen und konforme Testdaten nach GDT 2.1 und 3.x erzeugen. Läuft komplett lokal, ohne Upload.',
         tags: ['Tool', 'Praxis-IT', 'Browser-only'],
       },
+      {
+        name: 'Marktübersicht digitale Tierarztpraxis',
+        url: 'https://freimoser.github.io/marktuebersicht-tierarztpraxis/',
+        domain: 'freimoser.github.io/marktuebersicht-tierarztpraxis',
+        description: '47 digitale Lösungen für Tierarztpraxen im DACH-Markt, von Praxissoftware über KI-Dokumentation bis Videosprechstunde. Alphabetisch, ohne Rangfolge und ohne Bewertung.',
+        tags: ['Marktübersicht', 'Tiermedizin', 'Praxis-IT'],
+      },
     ],
   },
   {
