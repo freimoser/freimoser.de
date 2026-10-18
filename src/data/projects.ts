@@ -36,6 +36,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/gdt-viewer',
         description: 'GDT-Dateien (Gerätedatentransfer) im Browser lesen und konforme Testdaten nach GDT 2.1 und 3.x erzeugen. Läuft komplett lokal, ohne Upload.',
         tags: ['Tool', 'Praxis-IT', 'Browser-only'],
+        image: 'gdt-viewer.webp',
       },
       {
         name: 'Marktübersicht digitale Tierarztpraxis',
@@ -83,6 +84,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/balkonkraftwerk-ratgeber',
         description: 'Balkonkraftwerk kaufen, anmelden und Strom sparen: unabhängige Kaufberatung und Schritt-für-Schritt-Anleitungen für Mieter und Eigentümer.',
         tags: ['Energie', 'Ratgeber'],
+        image: 'solarbalkon.webp',
       },
       {
         name: 'Balkon bepflanzen',
@@ -90,6 +92,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/balkon-bepflanzen.de',
         description: 'Praxisnaher Ratgeber für Balkongärtner in Deutschland: welche Pflanzen zu Sonne, Schatten und Jahreszeit passen, vom Einsteiger-Tipp bis zum Profi-Trick.',
         tags: ['Garten', 'Ratgeber'],
+        image: 'balkon-bepflanzen.webp',
       },
     ],
   },
@@ -129,6 +132,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/ics-editor',
         description: 'ICS-Dateien und Google-Kalender-Exporte im Browser öffnen, bearbeiten, aufteilen und für den Import vorbereiten, auch bei Dateien über Googles 1-MB-Grenze. Kostenlos und ohne Upload.',
         tags: ['Tool', 'Kalender', 'Browser-only'],
+        image: 'ics-editor.webp',
       },
       {
         name: 'LDT & BDT Viewer',
@@ -136,6 +140,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/ldt-bdt-viewer',
         description: 'LDT- und BDT-Dateien aus Labor und Praxissoftware im Browser öffnen, Laborwerte lesen, Fehler finden und anonymisieren. Kostenlos und ohne Upload.',
         tags: ['Tool', 'Labordaten', 'Browser-only'],
+        image: 'ldt-bdt-viewer.webp',
       },
       {
         name: 'E-Rechnung Klartext',
@@ -143,6 +148,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/e-rechnung-klartext',
         description: 'XRechnung und ZUGFeRD lesbar anzeigen, prüfen, Fehlercodes verstehen und als PDF speichern. Kostenlos und ohne Upload.',
         tags: ['Tool', 'E-Rechnung', 'Browser-only'],
+        image: 'e-rechnung-klartext.webp',
       },
       {
         name: 'DICOM Viewer',
@@ -150,6 +156,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/dicom-viewer',
         description: 'Röntgen-, CT- und MRT-Bilder und ganze Radiologie-CDs im Browser ansehen, anonym als PNG oder JPG exportieren. Kostenlos und ohne Upload.',
         tags: ['Tool', 'Medizinische Bilder', 'Browser-only'],
+        image: 'dicom-viewer.webp',
       },
       {
         name: 'KinoTom',
@@ -157,6 +164,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/kinotom',
         description: 'Kuratierter Katalog frei zugänglicher Filme: Kurzfilme, Open Movies und KI-Filme zum direkten Anschauen.',
         tags: ['Katalog', 'Filme', 'Open Movies'],
+        image: 'kinotom.webp',
       },
       {
         name: 'Journey Journal',
@@ -164,6 +172,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/journey-journal-web',
         description: 'Privates Tagebuch für die eigene Körper-Transformation: tägliche Foto- und Video-Check-ins, automatisch im eigenen Google Drive gesichert, nie in der Handy-Galerie.',
         tags: ['App', 'Privacy', 'Google Drive'],
+        image: 'journey-journal.webp',
       },
       {
         name: 'Easy Photo Editor',
@@ -171,6 +180,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/easy-photo-editor',
         description: 'Druckfertige Collagen für Fotoabzüge (dm, Photobook oder eigene Maße) direkt im Browser, ohne Upload.',
         tags: ['Tool', 'Browser-only'],
+        image: 'easy-photo-editor.webp',
       },
     ],
   },
