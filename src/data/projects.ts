@@ -154,7 +154,7 @@ export const groups: ProjectGroup[] = [
         name: 'DICOM Viewer',
         url: 'https://freimoser.github.io/dicom-viewer/',
         domain: 'freimoser.github.io/dicom-viewer',
-        description: 'Röntgen-, CT- und MRT-Bilder und ganze Radiologie-CDs im Browser ansehen, anonym als PNG oder JPG exportieren. Kostenlos und ohne Upload.',
+        description: 'Röntgen-, CT- und MRT-Bilder und ganze Radiologie-CDs im Browser ansehen, anonym als PNG oder JPG exportieren. Kostenlos und ohne Upload, mit Beispieldateien zum Ausprobieren.',
         tags: ['Tool', 'Medizinische Bilder', 'Browser-only'],
         image: 'dicom-viewer.webp',
       },
