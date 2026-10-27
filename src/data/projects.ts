@@ -175,6 +175,14 @@ export const groups: ProjectGroup[] = [
         image: 'fhir-viewer.webp',
       },
       {
+        name: 'Viewer für HL7-v2-Nachrichten',
+        url: 'https://freimoser.github.io/hl7v2-viewer/',
+        domain: 'freimoser.github.io/hl7v2-viewer',
+        description: 'HL7-v2-Nachrichten (ADT, ORU, ORM) einfügen und in Segmente, Felder und Komponenten zerlegt lesen, anonymisieren und exportieren. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'HL7', 'Browser-only'],
+        image: 'hl7v2-viewer.webp',
+      },
+      {
         name: 'KinoTom',
         url: 'https://freimoser.github.io/kinotom/',
         domain: 'freimoser.github.io/kinotom',
