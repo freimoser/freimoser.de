@@ -167,6 +167,14 @@ export const groups: ProjectGroup[] = [
         image: 'cda-viewer.webp',
       },
       {
+        name: 'Viewer für FHIR-Daten',
+        url: 'https://freimoser.github.io/fhir-viewer/',
+        domain: 'freimoser.github.io/fhir-viewer',
+        description: 'FHIR-Ressourcen und Bundles als JSON oder XML lesbar anzeigen, Referenzen auflösen und FHIRPath-Ausdrücke testen. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'FHIR', 'Browser-only'],
+        image: 'fhir-viewer.webp',
+      },
+      {
         name: 'KinoTom',
         url: 'https://freimoser.github.io/kinotom/',
         domain: 'freimoser.github.io/kinotom',
