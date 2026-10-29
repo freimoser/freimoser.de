@@ -159,6 +159,14 @@ export const groups: ProjectGroup[] = [
         image: 'dicom-viewer.webp',
       },
       {
+        name: 'CDA Viewer',
+        url: 'https://freimoser.github.io/cda-viewer/',
+        domain: 'freimoser.github.io/cda-viewer',
+        description: 'Arztbriefe und Entlassbriefe im Format HL7 CDA R2 als lesbares Dokument im Browser anzeigen, mit Kopfdaten, Abschnitten und codierten Einträgen. Kostenlos und ohne Upload.',
+        tags: ['Tool', 'Arztbrief', 'Browser-only'],
+        image: 'cda-viewer.webp',
+      },
+      {
         name: 'KinoTom',
         url: 'https://freimoser.github.io/kinotom/',
         domain: 'freimoser.github.io/kinotom',
