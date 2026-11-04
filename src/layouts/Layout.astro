@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Consent from '../components/Consent.astro';
 
 export interface Props {
   title?: string;
@@ -90,6 +91,8 @@ const isHome =
       </ul>
     </div>
   </footer>
+
+  <Consent />
 
   <script>
     const toggle = document.getElementById('navToggle');
