@@ -4,7 +4,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 ---
 <div id="consent" class="consent" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung" hidden>
   <p>
-    Darf ich mit Google Analytics anonym messen, wie diese Seite genutzt wird? Ohne Zustimmung wird nichts geladen.
+    Darf ich mit Google Analytics messen, wie diese Seite genutzt wird? Ohne Zustimmung wird nichts geladen.
     <a href={`${base}datenschutz/#analytics`}>Mehr dazu</a>
   </p>
   <div class="consent-actions">
@@ -41,6 +41,15 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     document.getElementById('consentNo').addEventListener('click', function () { set('no'); });
     window.fmConsentReset = function () {
       try { localStorage.removeItem(KEY); } catch (e) {}
+      var host = location.hostname, doms = ['', host, '.' + host, '.' + host.split('.').slice(-2).join('.')];
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (n === '_ga' || n.indexOf('_ga_') === 0) {
+          doms.forEach(function (d) {
+            document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+          });
+        }
+      });
       location.reload();
     };
   })();
