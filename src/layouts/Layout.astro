@@ -1,5 +1,9 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/jetbrains-mono/600.css';
 import '../styles/global.css';
+import Consent from '../components/Consent.astro';
 
 export interface Props {
   title?: string;
@@ -41,9 +45,6 @@ const isHome =
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="theme-color" content="#05070d" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -90,6 +91,8 @@ const isHome =
       </ul>
     </div>
   </footer>
+
+  <Consent />
 
   <script>
     const toggle = document.getElementById('navToggle');

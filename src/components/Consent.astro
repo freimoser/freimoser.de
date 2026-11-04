@@ -1,0 +1,67 @@
+---
+const GA_ID = 'G-41XDFLBZ8X';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<div id="consent" class="consent" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung" hidden>
+  <p>
+    Darf ich mit Google Analytics messen, wie diese Seite genutzt wird? Ohne Zustimmung wird nichts geladen.
+    <a href={`${base}datenschutz/#analytics`}>Mehr dazu</a>
+  </p>
+  <div class="consent-actions">
+    <button type="button" id="consentNo" class="consent-btn">Ablehnen</button>
+    <button type="button" id="consentYes" class="consent-btn consent-yes">Akzeptieren</button>
+  </div>
+</div>
+<script is:inline define:vars={{ GA_ID }}>
+  (function () {
+    var KEY = 'fm-consent';
+    var box = document.getElementById('consent');
+    function loadGA() {
+      if (window.__gaLoaded) return;
+      window.__gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    }
+    var v = null;
+    try { v = localStorage.getItem(KEY); } catch (e) {}
+    if (v === 'yes') loadGA();
+    else if (v !== 'no') box.hidden = false;
+    function set(val) {
+      try { localStorage.setItem(KEY, val); } catch (e) {}
+      box.hidden = true;
+      if (val === 'yes') loadGA();
+    }
+    document.getElementById('consentYes').addEventListener('click', function () { set('yes'); });
+    document.getElementById('consentNo').addEventListener('click', function () { set('no'); });
+    window.fmConsentReset = function () {
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      var host = location.hostname, doms = ['', host, '.' + host, '.' + host.split('.').slice(-2).join('.')];
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (n === '_ga' || n.indexOf('_ga_') === 0) {
+          doms.forEach(function (d) {
+            document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+          });
+        }
+      });
+      location.reload();
+    };
+  })();
+</script>
+<style>
+  .consent { position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 1000; max-width: 640px; margin: 0 auto;
+    background: #0d1220; color: #e6e9f0; border: 1px solid #2a3350; border-radius: 12px; padding: 1rem 1.25rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4); font-size: .95rem; }
+  .consent[hidden] { display: none; }
+  .consent p { margin: 0 0 .75rem; }
+  .consent a { color: #8ab4ff; }
+  .consent-actions { display: flex; gap: .5rem; justify-content: flex-end; flex-wrap: wrap; }
+  .consent-btn { padding: .55rem 1.1rem; border-radius: 8px; border: 1px solid #3a4566; background: transparent; color: inherit; cursor: pointer; font: inherit; }
+  .consent-yes { background: #3b82f6; border-color: #3b82f6; color: #fff; }
+</style>
