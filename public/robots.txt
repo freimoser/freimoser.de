@@ -1,4 +1,61 @@
+# robots.txt für freimoser.de
+# Die gesamte Seite ist für alle Crawler offen.
+
 User-agent: *
 Allow: /
+
+# ---------------------------------------------------------------
+# KI-Suchmaschinen: Bots, die Antworten erzeugen und Quellen zitieren.
+# Sie sind durch die Wildcard oben bereits erlaubt und hier nur deshalb
+# noch einmal einzeln genannt, weil ein Crawler, der eine eigene Gruppe
+# findet, ausschließlich diese auswertet. Wer später eine Sperre
+# einträgt, sieht hier sofort, welche Bots davon betroffen wären.
+# ---------------------------------------------------------------
+
+# ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT, wenn eine Nutzerin oder ein Nutzer einen Link öffnet
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Google Gemini und AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft Copilot und Bing
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckGo Assist
+User-agent: DuckAssistBot
+Allow: /
+
+# Hinweis: GPTBot, anthropic-ai und CCBot sammeln Trainingsdaten, nicht
+# Zitate. Sie fallen unter die Wildcard und sind damit ebenfalls erlaubt.
+# Um nur das Training auszuschließen und zitiert zu werden, genügt je
+# ein eigener Block mit "Disallow: /" für diese drei.
 
 Sitemap: https://freimoser.de/sitemap-index.xml
