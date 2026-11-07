@@ -4,11 +4,17 @@ import '../styles/global.css';
 export interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  jsonLd?: unknown;
 }
 
 const {
   title = 'Freimoser — AI Engineering & Automation',
   description = 'S. Thomas Freimoser — KI-gestützte Automatisierung, Data Engineering und intelligente Agenten-Systeme.',
+  image = 'og-image.png',
+  ogType = 'website',
+  jsonLd,
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.endsWith('/')
@@ -23,6 +29,12 @@ const kontaktHref = `${base}kontakt/`;
 const impressumHref = `${base}impressum/`;
 const datenschutzHref = `${base}datenschutz/`;
 const faviconHref = `${base}favicon.svg`;
+
+const siteUrl = Astro.site ?? new URL('https://freimoser.de');
+// Trailing Slash erzwingen, damit Canonical und Sitemap identisch sind (build.format: 'directory')
+const canonicalPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+const canonical = new URL(canonicalPath, siteUrl).href;
+const ogImage = new URL(`${base}${image}`, siteUrl).href;
 
 const isHome =
   !currentPath.includes('projekte') &&
@@ -41,6 +53,27 @@ const isHome =
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="theme-color" content="#05070d" />
+  <meta name="author" content="S. Thomas Freimoser" />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="Freimoser" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Freimoser — AI Engineering & Automation" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />}
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
