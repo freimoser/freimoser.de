@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import Faq from '../components/Faq.astro';
 import { featuredProjects, allProjects } from '../data/projects';
+import { faqMainEntity } from '../data/faq';
 
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -29,7 +31,10 @@ const jsonLd = {
       publisher: { '@id': 'https://freimoser.de/#person' },
     },
     {
-      '@type': 'WebPage',
+      // Mehrfachtyp statt eigenem FAQPage-Knoten: Die Startseite IST die Seite,
+      // auf der die Fragen sichtbar stehen. Zwei Knoten mit derselben URL wären
+      // für Auswerter mehrdeutig.
+      '@type': ['WebPage', 'FAQPage'],
       '@id': 'https://freimoser.de/#webpage',
       url: 'https://freimoser.de/',
       name: 'Freimoser — AI Engineering & Automation',
@@ -37,6 +42,8 @@ const jsonLd = {
       about: { '@id': 'https://freimoser.de/#person' },
       inLanguage: 'de-DE',
       dateModified,
+      // Wortgleich zum sichtbaren FAQ-Bereich, beides stammt aus src/data/faq.ts.
+      mainEntity: faqMainEntity,
     },
     {
       '@type': 'Person',
@@ -62,6 +69,7 @@ const jsonLd = {
       sameAs: [
         'https://github.com/freimoser',
         'https://www.linkedin.com/in/thomas-freimoser/',
+        'https://x.com/freimoser',
       ],
     },
   ],
@@ -144,5 +152,7 @@ const jsonLd = {
       </div>
     </div>
   </section>
+
+  <Faq />
 
 </Layout>

@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { groups } from '../data/projects';
+import { faqItems } from '../data/faq';
 
 // llms.txt nach der Konvention von https://llmstxt.org
 // Bewusst als Endpoint und nicht als Datei in public/: so stammen die
@@ -41,6 +42,14 @@ export const GET: APIRoute = () => {
     for (const p of g.projects) {
       teile.push(zeile(p.name, p.url, p.description));
     }
+  }
+
+  // Die Fragen stammen aus derselben Quelle wie der sichtbare FAQ-Bereich der
+  // Startseite. Als Liste formatiert, damit die Struktur der llms.txt-Konvention
+  // (H2 + Liste) erhalten bleibt.
+  teile.push('', '## Häufige Fragen', '');
+  for (const f of faqItems) {
+    teile.push(`- **${f.q}** ${f.a}`);
   }
 
   teile.push(
