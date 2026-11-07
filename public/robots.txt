@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freimoser.de/sitemap-index.xml
