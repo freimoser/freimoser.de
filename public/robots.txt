@@ -37,8 +37,16 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
+# Google: Googlebot crawlt die Inhalte, aus denen AI Overviews entstehen
+User-agent: Googlebot
+Allow: /
+
 # Google Gemini und AI Overviews
 User-agent: Google-Extended
+Allow: /
+
+# Apple: Applebot crawlt für Siri und Spotlight
+User-agent: Applebot
 Allow: /
 
 # Apple Intelligence

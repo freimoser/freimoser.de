@@ -22,7 +22,9 @@ const jsonLd = {
       '@id': 'https://freimoser.de/#website',
       url: 'https://freimoser.de/',
       name: 'Freimoser',
-      description: 'AI Engineering & Automation — S. Thomas Freimoser',
+      // identisch zur Meta-Description der Seite, damit Schema und Seite nicht auseinanderlaufen
+      description:
+        'S. Thomas Freimoser. KI-gestützte Automatisierung, intelligente Agenten und Data Engineering. Projekte, die Unternehmen Zeit und Geld sparen.',
       inLanguage: 'de-DE',
       publisher: { '@id': 'https://freimoser.de/#person' },
     },
@@ -71,7 +73,7 @@ const jsonLd = {
   <section class="hero">
     <div class="container">
       <p class="pretitle">S. Thomas Freimoser</p>
-      <h1>AI Engineering &<br /><span class="text-gradient">Automation</span></h1>
+      <h1>AI Engineering & <br /><span class="text-gradient">Automation</span></h1>
       <p class="hero-lead">
         Ich baue intelligente Systeme, die Unternehmen Zeit und Geld sparen —
         von autonomen KI-Agenten bis zu skalierbaren Daten-Pipelines.
