@@ -943,6 +943,14 @@ h3 {
   font-size: 0.8rem;
 }
 
+.footer-updated {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+}
+
+.footer-updated time { color: var(--text-muted); }
+
 .footer-links {
   display: flex;
   gap: var(--space-lg);

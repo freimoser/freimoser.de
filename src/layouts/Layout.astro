@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { buildDateAttr, buildDateDe, buildYear } from '../data/build';
 
 export interface Props {
   title?: string;
@@ -113,7 +114,10 @@ const isHome =
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="name">Frei<span>moser</span></span>
-        <span class="footer-copy">&copy; {new Date().getFullYear()} · AI Engineering & Automation</span>
+        <span class="footer-copy">&copy; {buildYear} · AI Engineering & Automation</span>
+        <span class="footer-updated">
+          Zuletzt aktualisiert: <time datetime={buildDateAttr}>{buildDateDe}</time>
+        </span>
       </div>
       <ul class="footer-links">
         <li><a href="https://github.com/freimoser" target="_blank" rel="noopener">GitHub</a></li>

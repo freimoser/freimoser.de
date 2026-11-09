@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Faq from '../components/Faq.astro';
 import { featuredProjects, allProjects } from '../data/projects';
 import { faqMainEntity } from '../data/faq';
+import { buildDateIso } from '../data/build';
 
 const base = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL
@@ -11,8 +12,8 @@ const base = import.meta.env.BASE_URL.endsWith('/')
 
 // Die Seite wird ausschließlich durch einen Push auf main neu gebaut.
 // Das Build-Datum ist damit tatsächlich der Stand des Inhalts und kein
-// künstliches Frischesignal.
-const dateModified = new Date().toISOString();
+// künstliches Frischesignal. Derselbe Wert steht sichtbar im Footer.
+const dateModified = buildDateIso;
 
 // Website- und Personen-Entität der Domain. Bewusst nur auf der Startseite:
 // Google wertet sie als Angabe für die gesamte Site.

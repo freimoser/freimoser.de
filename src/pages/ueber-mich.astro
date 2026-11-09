@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { buildDateIso } from '../data/build';
 
 const stack = [
   'Python', 'TypeScript', 'Astro', 'React', 'Next.js', 'SQL', 'API Design',
 ];
-const dateModified = new Date().toISOString();
+const dateModified = buildDateIso;
 
 // ProfilePage: die Seite, die die Person beschreibt. Verweist per @id auf
 // die Person-Entität, die auf der Startseite definiert ist.
