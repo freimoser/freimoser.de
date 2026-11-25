@@ -119,6 +119,14 @@ export const groups: ProjectGroup[] = [
         image: 'familytree-free.webp',
       },
       {
+        name: 'ICS Editor',
+        url: 'https://freimoser.github.io/ics-editor/',
+        domain: 'freimoser.github.io/ics-editor',
+        description: 'ICS-Dateien und Google-Kalender-Exporte im Browser öffnen, bearbeiten und für den Google-Import unter 1 MB aufteilen; CSV und Excel werden zu ICS. Ohne Upload, mit Ratgebern zu Google Kalender.',
+        tags: ['Tool', 'Kalender', 'Browser-only'],
+        image: 'ics-editor.webp',
+      },
+      {
         name: 'Solvitalk',
         url: 'https://solvitalk.com/',
         domain: 'solvitalk.com',
@@ -132,6 +140,7 @@ export const groups: ProjectGroup[] = [
         domain: 'freimoser.github.io/ics-editor',
         description: 'ICS-Dateien und Google-Kalender-Exporte im Browser öffnen, bearbeiten, aufteilen und für den Import vorbereiten, auch bei Dateien über Googles 1-MB-Grenze. Kostenlos und ohne Upload.',
         tags: ['Tool', 'Kalender', 'Browser-only'],
+        image: 'ics-editor.webp',
         image: 'ics-editor.webp',
       },
       {
